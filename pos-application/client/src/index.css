@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap');
+
+/* ── Global Variables ──────────────────────────────────────────────────────── */
+:root {
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+  
+  --bg-app-color: #f8fafc;
+  --bg-app-grad-1: rgba(120,80,255,0.08);
+  --bg-app-grad-2: rgba(236,72,153,0.05);
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  
+  --glass-strong-bg: rgba(255, 255, 255, 0.9);
+  --glass-strong-border: rgba(0, 0, 0, 0.12);
+  
+  --header-bg: rgba(248, 250, 252, 0.8);
+  --header-border: rgba(0, 0, 0, 0.06);
+  
+  --menu-bg: rgba(248, 250, 252, 0.95);
+  --menu-border: rgba(0, 0, 0, 0.08);
+  
+  --input-bg: rgba(0, 0, 0, 0.04);
+  --input-border: rgba(0, 0, 0, 0.1);
+  --input-text: #0f172a;
+  --input-placeholder: rgba(0, 0, 0, 0.4);
+  
+  --product-card-bg: rgba(255, 255, 255, 0.9);
+  --product-card-border: rgba(0, 0, 0, 0.08);
+  
+  --cart-panel-bg: rgba(255, 255, 255, 0.5);
+  --cart-panel-border: rgba(0, 0, 0, 0.07);
+  
+  --modal-bg: #ffffff;
+  --modal-border: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg-main: #0a0a0f;
+  --text-main: #f0f0f5;
+  
+  --bg-app-color: #0a0a0f;
+  --bg-app-grad-1: rgba(120,80,255,0.15);
+  --bg-app-grad-2: rgba(236,72,153,0.1);
+  
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  
+  --glass-strong-bg: rgba(255,255,255,0.07);
+  --glass-strong-border: rgba(255,255,255,0.12);
+  
+  --header-bg: rgba(10,10,15,0.8);
+  --header-border: rgba(255,255,255,0.06);
+  
+  --menu-bg: rgba(10,10,15,0.95);
+  --menu-border: rgba(255,255,255,0.08);
+  
+  --input-bg: rgba(255,255,255,0.06);
+  --input-border: rgba(255,255,255,0.1);
+  --input-text: #f0f0f5;
+  --input-placeholder: rgba(255,255,255,0.3);
+  
+  --product-card-bg: rgba(255,255,255,0.04);
+  --product-card-border: rgba(255,255,255,0.07);
+  
+  --cart-panel-bg: rgba(255,255,255,0.03);
+  --cart-panel-border: rgba(255,255,255,0.07);
+
+  --modal-bg: #1e1e24;
+  --modal-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Global Reset & Base ───────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.4); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139,92,246,0.7); }
+
+/* ── Typography ────────────────────────────────────────────────────────────── */
+.brand-font { font-family: "Syne", sans-serif; }
+
+/* ── Glass Card ────────────────────────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-strong {
+  background: var(--glass-strong-bg);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid var(--glass-strong-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ── Gradient Backgrounds ──────────────────────────────────────────────────── */
+.bg-app {
+  background: var(--bg-app-color);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, var(--bg-app-grad-1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, var(--bg-app-grad-2) 0%, transparent 60%);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* ── Ant Design Overrides ──────────────────────────────────────────────────── */
+.ant-modal-content, .ant-modal-header, .ant-card {
+  background: var(--modal-bg) !important;
+  border-color: var(--modal-border) !important;
+  color: var(--text-main) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.ant-modal-title, .ant-form-item-label > label {
+  color: var(--text-main) !important;
+}
+.ant-input, .ant-input-affix-wrapper {
+  background: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--input-text) !important;
+  border-radius: 99px !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease !important;
+}
+.ant-select-selector {
+  background: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--input-text) !important;
+  border-radius: 99px !important;
+}
+.ant-select-arrow {
+  color: var(--input-text) !important;
+}
+.ant-input::placeholder { color: var(--input-placeholder) !important; }
+.ant-input-prefix { color: var(--input-placeholder) !important; }
+.ant-input-affix-wrapper:hover, .ant-input-affix-wrapper:focus-within {
+  border-color: rgba(139,92,246,0.6) !important;
+  box-shadow: 0 0 0 2px rgba(139,92,246,0.15) !important;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(124,58,237,0.3) !important;
+}
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.5) !important;
+}
+.ant-btn-dangerous {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  border: none !important;
+}
+
+.ant-spin-dot-item { background-color: #8b5cf6 !important; }
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--header-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-link.anticon {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-links {
+  @apply flex justify-between items-center gap-6
+         md:static fixed z-50 bottom-0
+         md:w-auto w-screen
+         md:bg-transparent left-0
+         md:border-t-0 border-t
+         md:px-0 px-4 py-2;
+  background: var(--menu-bg);
+  border-color: var(--menu-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-link {
+  @apply flex flex-col items-center transition-all duration-200 gap-y-[2px] text-slate-500 hover:text-slate-900 dark:text-white/50 dark:hover:text-white;
+  font-size: 11px;
+}
+
+.menu-link.active {
+  @apply text-violet-600 dark:text-violet-400;
+}
+
+.menu-link svg {
+  font-size: 20px !important;
+}
+
+/* ── Categories ────────────────────────────────────────────────────────────── */
+.categories::-webkit-scrollbar { display: none; }
+.products::-webkit-scrollbar { display: none; }
+
+/* ── Products Grid ─────────────────────────────────────────────────────────── */
+.products-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 16px;
+}
+
+/* ── Product Card ──────────────────────────────────────────────────────────── */
+.product-card {
+  background: var(--product-card-bg);
+  border: 1px solid var(--product-card-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+.product-card:hover {
+  border-color: rgba(139,92,246,0.4);
+  box-shadow: 0 8px 40px rgba(139,92,246,0.15), 0 0 0 1px rgba(139,92,246,0.2);
+}
+
+/* ── Cart Panel ────────────────────────────────────────────────────────────── */
+.cart-panel {
+  background: var(--cart-panel-bg);
+  border-left: 1px solid var(--cart-panel-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ── Animations ────────────────────────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-slide { animation: fadeSlideUp 0.4s ease both; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 200% auto;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@media (min-width: 768px) {
+  body { overflow: hidden; }
+}
