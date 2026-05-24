@@ -1,6 +1,6 @@
 # Mels Store: Intelligent E-Commerce Ecosystem Developed Using MERN Stack and Event-Driven Data Analytics
 
-**GitHub Repository:** [Insert your GitHub Link Here - e.g., https://github.com/username/mels-store]
+**GitHub Repository:** https://github.com/melisamehe/GraduationThesis
 
 ---
 
