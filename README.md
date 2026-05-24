@@ -61,6 +61,12 @@ graph TD
 
 ![BI Dashboard](docs/image-1.png)
 
+### 5. Firebase Event Tracking (Analytics)
+Google Firebase Analytics was integrated into the system to anonymously track user behavior within the application (product views, adding to cart, purchasing) and perform cross-analysis with BI Dashboard data.
+
+![Firebase Analytics](docs/image-16.png)
+![Firebase Analytics](docs/image-15.png)
+
 ---
 
 ## Local Setup & Installation
