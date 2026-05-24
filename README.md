@@ -1,4 +1,4 @@
-# Mels Store - Next Generation E-Commerce POS System
+# Mels Store - Intelligent E-Commerce Ecosystem Developed Using MERN Stack and Event-Driven Data Analytics
 
 ## About The Project
 
